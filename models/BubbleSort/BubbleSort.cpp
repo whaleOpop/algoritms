@@ -1,13 +1,18 @@
 #include "BubbleSort.h"
 
-BubbleSort::BubbleSort(int* arr, int s) : Sort(arr, s) {}
+template<typename T>
+BubbleSort<T>::BubbleSort(T* arr, int s) : Sort<T>(arr, s) {}
 
-void BubbleSort::sort() {
-    for (int i = 0; i < size - 1; i++) {
-        for (int j = 0; j < size - i - 1; j++) {
-            if (array[j] > array[j + 1]) {
-                swap(array[j], array[j + 1]);  
+template<typename T>
+void BubbleSort<T>::sort() {
+    for (int i = 0; i < this->size - 1; i++) {
+        for (int j = 0; j < this->size - i - 1; j++) {
+            if (this->array[j] > this->array[j + 1]) {
+                this->swap(this->array[j], this->array[j + 1]);  
             }
         }
     }
 }
+
+template class BubbleSort<int>;
+template class BubbleSort<double>;
