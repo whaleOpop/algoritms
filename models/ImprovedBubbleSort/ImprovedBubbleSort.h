@@ -3,9 +3,10 @@
 
 #include "../Sort/Sort.h"
 
-class ImprovedBubbleSort : public Sort {
+template<typename T>
+class ImprovedBubbleSort : public Sort<T> {
 public:
-    ImprovedBubbleSort(int* arr, int s);
+    ImprovedBubbleSort(T* arr, int s);
     void sort() override;
 };
 

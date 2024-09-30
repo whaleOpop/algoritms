@@ -1,18 +1,23 @@
 
 #include "ImprovedBubbleSort.h"
 
-ImprovedBubbleSort::ImprovedBubbleSort(int* arr, int s) : Sort(arr, s) {}
+template<typename T>
+ImprovedBubbleSort<T>::ImprovedBubbleSort(T* arr, int s) : Sort<T>(arr, s) {}
 
-void ImprovedBubbleSort::sort() {
+template<typename T>
+void ImprovedBubbleSort<T>::sort() {
     bool swapped;
-    for (int i = 0; i < size - 1; i++) {
+    for (int i = 0; i < this->size - 1; i++) {
         swapped = false;
-        for (int j = 0; j < size - i - 1; j++) {
-            if (array[j] > array[j + 1]) {
-                swap(array[j], array[j + 1]);  
+        for (int j = 0; j < this->size - i - 1; j++) {
+            if (this->array[j] > this->array[j + 1]) {
+                this->swap(this->array[j], this->array[j + 1]); 
                 swapped = true;
             }
         }
         if (!swapped) break; 
     }
 }
+
+template class ImprovedBubbleSort<int>;
+template class ImprovedBubbleSort<double>;
