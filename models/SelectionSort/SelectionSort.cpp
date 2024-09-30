@@ -1,15 +1,20 @@
 #include "SelectionSort.h"
 
-SelectionSort::SelectionSort(int* arr, int s) : Sort(arr, s) {}
+template<typename T>
+SelectionSort<T>::SelectionSort(T* arr, int s) : Sort<T>(arr, s) {}
 
-void SelectionSort::sort() {
-    for (int i = 0; i < size - 1; i++) {
+template<typename T>
+void SelectionSort<T>::sort() {
+    for (int i = 0; i < this->size - 1; i++) {
         int minIndex = i;
-        for (int j = i + 1; j < size; j++) {
-            if (array[j] < array[minIndex]) {
+        for (int j = i + 1; j < this->size; j++) {
+            if (this->array[j] < this->array[minIndex]) {
                 minIndex = j;
             }
         }
-        swap(array[i], array[minIndex]);
+        this->swap(this->array[i], this->array[minIndex]);  
     }
 }
+
+template class SelectionSort<int>;
+template class SelectionSort<double>;

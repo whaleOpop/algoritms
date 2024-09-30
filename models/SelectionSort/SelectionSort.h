@@ -3,10 +3,12 @@
 
 #include "../Sort/Sort.h"
 
-class SelectionSort : public Sort {
+template<typename T>
+class SelectionSort : public Sort<T> {
 public:
-    SelectionSort(int* arr, int s);
+    SelectionSort(T* arr, int s);
     void sort() override;
 };
+
 
 #endif 
