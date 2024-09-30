@@ -1,18 +1,21 @@
 #ifndef SORT_H
 #define SORT_H
 
+template <typename T>
 class Sort
 {
 protected:
     int size;
-    int *array;
+    T *array;
 
 public:
     Sort();
-    Sort(int *arr, int s);
-    void swap(int &a, int &b);
+    Sort(T *arr, int s);
+
     int getSize() const;
-    int &getItemById(int index) const;
+    T &getItemById(int index) const;
+
+    void swap(T &a, T &b);
 
     virtual void sort() = 0;
 

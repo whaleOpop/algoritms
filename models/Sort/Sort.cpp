@@ -1,28 +1,34 @@
 #include "Sort.h"
 #include "iostream"
 
-Sort::Sort() : size(0), array(nullptr) {}
+template <typename T>
+Sort<T>::Sort() : size(0), array(nullptr) {}
 
-Sort::Sort(int *arr, int s) : size(s), array(arr) {}
+template <typename T>
+Sort<T>::Sort(T *arr, int s) : size(s), array(arr) {}
 
-int Sort::getSize() const
+template <typename T>
+int Sort<T>::getSize() const
 {
     return size;
 }
 
-void Sort::swap(int &a, int &b)
-{
-    int temp = a;
-    a = b;
-    b = temp;
-}
-
-int &Sort::getItemById(int index) const
+template <typename T>
+T &Sort<T>::getItemById(int index) const
 {
     return array[index];
 }
 
-void Sort::printArray() const
+template <typename T>
+void Sort<T>::swap(T &a, T &b)
+{
+    T temp = a;
+    a = b;
+    b = temp;
+}
+
+template <typename T>
+void Sort<T>::printArray() const
 {
     for (int i = 0; i < size; ++i)
     {
@@ -30,3 +36,6 @@ void Sort::printArray() const
     }
     std::cout << std::endl;
 }
+
+template class Sort<int>;
+template class Sort<double>;
