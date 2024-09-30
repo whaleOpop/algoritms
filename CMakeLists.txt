@@ -1,4 +1,7 @@
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.10)
+
+enable_testing()
+add_subdirectory(tests)
 
 project(algoritms)
 add_subdirectory(models)
