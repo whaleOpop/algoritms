@@ -26,9 +26,14 @@ jobs:
         mkdir build
         cd build
         cmake ..
-        cmake --build . --target tests
+        cmake --build . --target tests 
+
+    - name: List build directory
+      run: |
+        cd build
+        ls -l
 
     - name: Run tests
       run: |
         cd build
-        ctest --output-on-failure
+        ctest -V --output-on-failure
