@@ -3,12 +3,12 @@
 
 #include "../Sort/Sort.h"
 
-template<typename T>
-class ExchangeSort : public Sort<T> {
+template <typename T>
+class ExchangeSort : public Sort<T>
+{
 public:
-    ExchangeSort(T* arr, int s);
+    ExchangeSort(T *arr, int s);
     void sort() override;
 };
 
-
-#endif 
+#endif
