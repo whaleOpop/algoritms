@@ -3,10 +3,11 @@
 
 #include "../Sort/Sort.h"
 
-template<typename T>
-class BubbleSort : public Sort<T> {
+template <typename T>
+class BubbleSort : public Sort<T>
+{
 public:
-    BubbleSort(T* arr, int s);
+    BubbleSort(T *arr, int s);
     void sort() override;
 };
 
