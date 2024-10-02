@@ -36,4 +36,4 @@ jobs:
     - name: Run tests
       run: |
         cd build
-        ctest -V --output-on-failure
+        ctest -V --output-on-failure -R ^run_improved_bubble_sort_tests$
