@@ -26,7 +26,7 @@ jobs:
         mkdir build
         cd build
         cmake ..
-        cmake --build . --target tests 
+        cmake --build . --target SortingTests 
 
     - name: List build directory
       run: |
@@ -36,4 +36,4 @@ jobs:
     - name: Run tests
       run: |
         cd build
-        ctest -V --output-on-failure -R ^run_improved_bubble_sort_tests$
+        ctest -V --output-on-failure
