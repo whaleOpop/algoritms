@@ -9,31 +9,25 @@ on:
       - main  
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  core:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+        shared: [true, false]
+
+    runs-on: ${{ matrix.os }}
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
-    - name: Install Dependencies
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y libidn11-dev
+      - name: Configure with shared=${{ matrix.shared }}
+        run: >-
+          cmake
+          -Bbuild
+          -DBUILD_SHARED_LIBS=${{ matrix.shared }}        
 
-    - name: Install CMake
-      uses: jwlawson/actions-setup-cmake@v1
-      with:
-        cmake-version: '3.5'  
+      - name: Build
+        run: cmake --build build
 
-    - name: Build
-      run: |
-        mkdir build
-        cd build
-        cmake ..
-        cmake --build . --config Debug
-
-    - name: Run tests
-      run: |
-        cd build
-        ctest --output-on-failure
+      - name: Test
+        run: ctest --test-dir build -V
