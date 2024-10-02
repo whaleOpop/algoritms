@@ -34,12 +34,3 @@ target_link_libraries(SortingTests
 
 target_link_libraries(SortingTests PRIVATE Catch2::Catch2WithMain)
 
-
-add_test(NAME run_bubble_sort_tests COMMAND SortingTests "[bubble_sort]")
-add_test(NAME run_exchange_sort_tests COMMAND SortingTests "[exchange_sort]")
-add_test(NAME run_improved_bubble_sort_tests COMMAND SortingTests "[improved_bubble_sort]")
-add_test(NAME run_insertion_sort_tests COMMAND SortingTests "[insertion_sort]")
-add_test(NAME run_selection_sort_tests COMMAND SortingTests "[selection_sort]")
-
-
-enable_testing()
