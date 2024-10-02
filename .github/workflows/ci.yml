@@ -26,7 +26,7 @@ jobs:
         mkdir build
         cd build
         cmake ..
-        cmake --build . --target SortingTests 
+        cmake --build . --target ALL_BUILD 
 
     - name: List build directory
       run: |
