@@ -9,25 +9,26 @@ on:
       - main  
 
 jobs:
-  core:
-    strategy:
-      matrix:
-        os: [ubuntu-latest, macos-latest]
-        shared: [true, false]
-
-    runs-on: ${{ matrix.os }}
+  build:
+    runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+    - name: Checkout repository
+      uses: actions/checkout@v3
 
-      - name: Configure with shared=${{ matrix.shared }}
-        run: >-
-          cmake
-          -Bbuild
-          -DBUILD_SHARED_LIBS=${{ matrix.shared }}        
+    - name: Set up CMake
+      uses: jwlawson/actions-setup-cmake@v2
+      with:
+        cmake-version: '3.16.x' 
 
-      - name: Build
-        run: cmake --build build
+    - name: Build
+      run: |
+        mkdir build
+        cd build
+        cmake ..
+        cmake --build . --target tests
 
-      - name: Test
-        run: ctest --test-dir build -V
+    - name: Run tests
+      run: |
+        cd build
+        ctest --output-on-failure
