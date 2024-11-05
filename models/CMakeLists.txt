@@ -1,6 +1,3 @@
-add_subdirectory(BubbleSort)
-add_subdirectory(ImprovedBubbleSort)
-add_subdirectory(InsertionSort)
-add_subdirectory(SelectionSort)
 add_subdirectory(Sort)
-add_subdirectory(ExchangeSort)
+add_subdirectory(ShakerSort)
+add_subdirectory(BinaryInsertionSort)
