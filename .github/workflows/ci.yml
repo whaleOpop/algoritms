@@ -3,10 +3,10 @@ name: C++ CI
 on:
   push:
     branches:
-      - main  
+      - 2sem  
   pull_request:
     branches:
-      - main  
+      - 2sem  
 
 jobs:
   build:
