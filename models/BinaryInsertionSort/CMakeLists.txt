@@ -1,1 +1,0 @@
-add_library(BinaryInsertionSort BinaryInsertionSort.cpp BinaryInsertionSort.h)

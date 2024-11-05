@@ -1,3 +1,0 @@
-add_subdirectory(Sort)
-add_subdirectory(ShakerSort)
-add_subdirectory(BinaryInsertionSort)
