@@ -12,13 +12,11 @@ add_subdirectory(models)
 
 
 add_executable(algoritms main.cpp)
-target_link_libraries(algoritms BubbleSort ExchangeSort ImprovedBubbleSort InsertionSort SelectionSort Sort)
+target_link_libraries(algoritms BinaryInsertionSort ShakerSort Sort)
 
-add_test(NAME run_bubble_sort_tests COMMAND SortingTests "[bubble_sort]")
-add_test(NAME run_exchange_sort_tests COMMAND SortingTests "[exchange_sort]")
-add_test(NAME run_improved_bubble_sort_tests COMMAND SortingTests "[improved_bubble_sort]")
-add_test(NAME run_insertion_sort_tests COMMAND SortingTests "[insertion_sort]")
-add_test(NAME run_selection_sort_tests COMMAND SortingTests "[selection_sort]")
+add_test(NAME run_bubble_sort_tests COMMAND SortingTests "[shaker_sort]")
+add_test(NAME run_exchange_sort_tests COMMAND SortingTests "[binary_insertion_sort]")
+
 
 
 enable_testing()
