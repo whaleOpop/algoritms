@@ -1,3 +1,3 @@
 add_subdirectory(Sort)
-add_subdirectory(ShakerSort)
-add_subdirectory(BinaryInsertionSort)
+add_subdirectory(ShellSort)
+add_subdirectory(QuickSort)
