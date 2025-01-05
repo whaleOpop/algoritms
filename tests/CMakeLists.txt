@@ -14,14 +14,14 @@ FetchContent_MakeAvailable(catch2)
 enable_testing()
 
 add_executable(SortingTests
-    ShakerSortTest.cpp
-    BinaryInsertionSortTest.cpp
+    QuickSortTest.cpp
+    ShellSortTest.cpp
 )
 
 target_link_libraries(SortingTests
     PRIVATE
-    BinaryInsertionSort
-    ShakerSort
+    ShellSort
+    QuickSort
     Sort
 )
 
