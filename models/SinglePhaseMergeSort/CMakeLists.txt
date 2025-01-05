@@ -1,0 +1,1 @@
+add_library(SinglePhaseMergeSort SinglePhaseMergeSort.cpp SinglePhaseMergeSort.h)

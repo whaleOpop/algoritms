@@ -14,14 +14,16 @@ FetchContent_MakeAvailable(catch2)
 enable_testing()
 
 add_executable(SortingTests
-    ShakerSortTest.cpp
-    BinaryInsertionSortTest.cpp
+    NaturalMergeSortTest.cpp
+    SinglePhaseMergeSortTest.cpp
+    TwoPhaseMergeSort.cpp
 )
 
 target_link_libraries(SortingTests
     PRIVATE
-    BinaryInsertionSort
-    ShakerSort
+    NaturalMergeSort
+    SinglePhaseMergeSort
+    TwoPhaseMergeSort
     Sort
 )
 

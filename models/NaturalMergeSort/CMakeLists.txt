@@ -1,0 +1,1 @@
+add_library(NaturalMergeSort NaturalMergeSort.cpp NaturalMergeSort.h)

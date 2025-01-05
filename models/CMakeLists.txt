@@ -1,3 +1,4 @@
 add_subdirectory(Sort)
-add_subdirectory(ShakerSort)
-add_subdirectory(BinaryInsertionSort)
+add_subdirectory(SinglePhaseMergeSort)
+add_subdirectory(NaturalMergeSort)
+add_subdirectory(TwoPhaseMergeSort)
