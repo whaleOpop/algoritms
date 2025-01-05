@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.10)
 
 project(algoritms)
 
@@ -12,10 +12,10 @@ add_subdirectory(models)
 
 
 add_executable(algoritms main.cpp)
-target_link_libraries(algoritms BinaryInsertionSort ShakerSort Sort)
+target_link_libraries(algoritms QuickSort ShellSort Sort)
 
-add_test(NAME run_bubble_sort_tests COMMAND SortingTests "[shaker_sort]")
-add_test(NAME run_exchange_sort_tests COMMAND SortingTests "[binary_insertion_sort]")
+add_test(NAME run_shell_sort_tests COMMAND SortingTests "[shell_sort]")
+add_test(NAME run_quick_sort_tests COMMAND SortingTests "[quick_sort]")
 
 
 
